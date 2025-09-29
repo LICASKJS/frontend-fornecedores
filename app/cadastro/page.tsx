@@ -277,7 +277,7 @@ const handleSubmit = async (e) => {
   }
 
   try {
-    const response = await fetch('https://meu-backend-i134.onrender.com/api/cadastro', {
+    const response = await fetch('https://backend-fornecedores.onrender.com/api/cadastro', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

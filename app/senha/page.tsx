@@ -54,7 +54,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     setIsLoading(true)
 
     try {
-      const response = await fetch("https://meu-backend-i134.onrender.com/api/recuperar-senha", {
+      const response = await fetch("https://backend-fornecedores.onrender.com/api/recuperar-senha", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),

@@ -75,7 +75,7 @@ export default function NewPassword() {
     setErrors([])
 
     try {
-      const response = await fetch("https://meu-backend-i134.onrender.com/api/redefinir-senha", {
+      const response = await fetch("https://backend-fornecedores.onrender.com/api/redefinir-senha", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token, nova_senha: password }),

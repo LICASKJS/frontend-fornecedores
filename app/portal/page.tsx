@@ -95,8 +95,7 @@ async function buscarFornecedorPorNome(nome: string): Promise<Fornecedor | null>
 
     const fornecedor = fornecedores[0];
 
-    // Requisição para buscar dados de homologação
-    const homologacaoResponse = await fetch(`${API_BASE}/api/dados-homologacao?fornecedor_id=${fornecedor.id}`);
+    const homologacaoResponse = await fetch(`https://backend-fornecedores.onrender.com/api/dados-homologacao?fornecedor_id=${fornecedor.id}`);
     let dadosHomologacao: { iqf: number; homologacao: string } = { iqf: 0, homologacao: '0' };
 
     if (homologacaoResponse.ok) {
@@ -129,7 +128,7 @@ async function buscarFornecedorPorNome(nome: string): Promise<Fornecedor | null>
 
 async function buscarDocumentosNecessarios(categoria: string): Promise<DocRequisito[]> {
   try {
-    const response = await fetch(`${API_BASE}/api/documentos-necessarios`, {
+    const response = await fetch(`https://backend-fornecedores.onrender.com/api/documentos-necessarios`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -191,7 +190,7 @@ async function enviarDocumentos(
       formData.append("arquivos", arquivo)
     })
 
-    const response = await fetch(`${API_BASE}/api/envio-documento`, {
+    const response = await fetch(`https://backend-fornecedores.onrender.com/api/envio-documento`, {
       method: "POST",
       body: formData,
     })
@@ -222,7 +221,6 @@ async function enviarDocumentos(
 }
 
 async function buscarHistoricoEnvios(fornecedorId: string): Promise<HistoricoEnvio[]> {
-  // Pode ser implementado posteriormente quando o endpoint estiver disponível
   return []
 }
 

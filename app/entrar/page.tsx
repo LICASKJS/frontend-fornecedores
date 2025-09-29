@@ -56,7 +56,7 @@ export default function LoginPage() {
 
    
     try {
-        const response = await fetch("https://meu-backend-i134.onrender.com/api/login", {  
+        const response = await fetch("https://backend-fornecedores.onrender.com/api/login", {  
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
